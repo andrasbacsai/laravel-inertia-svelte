@@ -16,10 +16,10 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    return view('home');
 });
-
-Route::get('/users', [UsersController::class, 'index']);
+Route::get('/about', function () {
+    return Inertia::render('About');
+});
+Route::get('/users', [UsersController::class, 'index'])->name('users.index');
 Route::post('/users', [UsersController::class, 'store']);
-
-Route::get('/users/about', [UsersController::class, 'about']);

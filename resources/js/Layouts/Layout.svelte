@@ -5,9 +5,9 @@
 <main>
     <nav>
         <ul>
-            <li><a use:inertia href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a use:inertia href="/users">Users</a></li>
-            <li><a href="/users/about">About</a></li>
+            <li><a use:inertia href="/about">About</a></li>
         </ul>
     </nav>
     <slot />

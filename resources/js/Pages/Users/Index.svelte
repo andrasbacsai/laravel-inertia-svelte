@@ -1,5 +1,5 @@
 <script>
-    import Layout from "../Layout.svelte";
+    import Layout from "../../Layouts/Layout.svelte";
     export let users;
     console.log(users);
     import { useForm } from "@inertiajs/svelte";
@@ -16,17 +16,20 @@
 </script>
 
 <svelte:head>
-    <title>Welcome</title>
+    <title>Users</title>
 </svelte:head>
 <Layout>
-    <form on:submit|preventDefault={submit}>
+    {#if $form.isDirty}
+        <div>There are unsaved form changes.</div>
+    {/if}
+    <form class="flex" on:submit|preventDefault={submit}>
         <input type="text" bind:value={$form.email} />
         {#if $form.errors.email}
-            <div class="form-error">{$form.errors.email}</div>
+            <span class="form-error">{$form.errors.email}</span>
         {/if}
         <input type="password" bind:value={$form.password} />
         {#if $form.errors.password}
-            <div class="form-error">{$form.errors.password}</div>
+            <span class="form-error">{$form.errors.password}</span>
         {/if}
         <input type="checkbox" bind:checked={$form.remember} /> Remember Me
         <button type="submit" disabled={$form.processing}>Submit</button>
