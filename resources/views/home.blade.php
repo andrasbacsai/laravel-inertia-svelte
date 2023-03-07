@@ -17,7 +17,6 @@
             <li><a href="/about">About</a></li>
         </ul>
     </nav>
-    Home
     <livewire:counter />
     @livewireScripts
 </body>

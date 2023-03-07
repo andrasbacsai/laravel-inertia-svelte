@@ -18,6 +18,7 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
+        usleep(500000);
         $request->validate([
             'password' => ['required', 'max:50'],
             'email' => ['required', 'max:50', 'email'],

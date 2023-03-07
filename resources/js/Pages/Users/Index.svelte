@@ -11,7 +11,12 @@
     });
 
     function submit() {
-        $form.post("/users");
+        $form.post("/users", {
+            onStart() {
+                console.log("Sending post request...");
+                $form.clearErrors();
+            },
+        });
     }
 </script>
 
@@ -19,6 +24,12 @@
     <title>Users</title>
 </svelte:head>
 <Layout>
+    {#if $form.progress}
+        {$form.progress.percentage}
+        <progress value={$form.progress.percentage} max="100">
+            {$form.progress.percentage}%
+        </progress>
+    {/if}
     {#if $form.isDirty}
         <div>There are unsaved form changes.</div>
     {/if}

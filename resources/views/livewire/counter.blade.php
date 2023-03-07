@@ -1,4 +1,4 @@
 <div>
     <button wire:click="increment">+</button>
-    <div>{{ $count }}</div>
+    <div> (this is a Livewire component) {{ $count }}</div>
 </div>
