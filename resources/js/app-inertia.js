@@ -1,11 +1,12 @@
 import './bootstrap';
-
+import Layout from './Layouts/Layout.svelte'
 import { createInertiaApp } from '@inertiajs/svelte'
 
 createInertiaApp({
     resolve: name => {
         const pages = import.meta.glob('./Pages/**/*.svelte', { eager: true })
-        return pages[`./Pages/${name}.svelte`]
+        let page = pages[`./Pages/${name}.svelte`]
+        return { default: page.default, layout: page.layout || Layout }
     },
     setup({ el, App, props }) {
         new App({ target: el, props })

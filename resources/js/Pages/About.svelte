@@ -5,4 +5,4 @@
 <svelte:head>
     <title>About</title>
 </svelte:head>
-<Layout>About page</Layout>
+About page
