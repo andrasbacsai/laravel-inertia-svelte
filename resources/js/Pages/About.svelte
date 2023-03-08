@@ -1,5 +1,4 @@
 <script>
-    import Layout from "../Layouts/Layout.svelte";
 </script>
 
 <svelte:head>

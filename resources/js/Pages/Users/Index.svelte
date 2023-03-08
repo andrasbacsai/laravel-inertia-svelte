@@ -1,5 +1,4 @@
 <script>
-    import Layout from "../../Layouts/Layout.svelte";
     // export let users;
     import { useForm, page, router } from "@inertiajs/svelte";
     import { onMount } from "svelte";
